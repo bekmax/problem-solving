@@ -1,0 +1,37 @@
+package leetcode.strings;
+
+/**
+ * N1880 Check if Word Equals Summation of Two Words
+ * The letter value of a letter is its position in the alphabet starting from 0 (i.e. 'a' -> 0, 'b' -> 1, 'c' -> 2, etc.).
+ * The numerical value of some string of lowercase English letters s is the concatenation of the letter values of each letter in s, which is then converted into an integer.
+ * For example, if s = "acb", we concatenate each letter's letter value, resulting in "021". After converting it, we get 21.
+ * You are given three strings firstWord, secondWord, and targetWord, each consisting of lowercase English letters 'a' through 'j' inclusive.
+ * Return true if the summation of the numerical values of firstWord and secondWord equals the numerical value of targetWord, or false otherwise.
+ */
+public class EasyCheckIfWordEqualsSummationOfTwoWords {
+    public static void main(String[] args) {
+        String first = "acb";
+        String second = "cba";
+        String target = "cdb";
+
+        System.out.println(isSumEqual(first, second, target));
+    }
+
+    public static boolean isSumEqual(String firstWord, String secondWord, String targetWord) {
+        int first = 0;
+        int second = 0;
+        int target = 0;
+
+        for (char c : firstWord.toCharArray()){
+            first = first * 10 + (c - 'a');
+        }
+        for (char c : secondWord.toCharArray()){
+            second = second * 10 + (c - 'a');
+        }
+        for (char c : targetWord.toCharArray()){
+            target = target * 10 + (c - 'a');
+        }
+
+        return first + second == target;
+    }
+}
