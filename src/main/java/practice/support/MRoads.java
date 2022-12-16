@@ -1,9 +1,6 @@
 package practice.support;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Support {
+public class MRoads {
     public static void main(String[] args) {
         longestSameCharacterSetInString("abbssddd");
     }
@@ -36,5 +33,4 @@ public class Support {
         System.out.println(maxCount);
         System.out.println(maxStartingIndex);
     }
-
 }
